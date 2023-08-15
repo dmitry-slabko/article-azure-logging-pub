@@ -7,7 +7,6 @@ using AzureLogging.Options.Validators;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Options;
 using Serilog;
-using Serilog.Core;
 using Serilog.Enrichers.Sensitive;
 using Serilog.Events;
 using Serilog.Exceptions;
