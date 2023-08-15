@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "AzureLogging": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7450;http://localhost:5009",
+      "workingDirectory": "$(OutDir)",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\AzureLogging.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\AzureLogging.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Update="appSettings.Development.json">
+        <DependentUpon>appSettings.json</DependentUpon>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Bogus" Version="34.0.2" />
+      <PackageReference Include="FluentValidation" Version="11.6.0" />
+      <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+      <PackageReference Include="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel" Version="2.21.0" />
+      <PackageReference Include="Microsoft.AspNetCore.HeaderPropagation" Version="6.0.20" />
+      <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="6.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.21.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="7.0.9" />
+      <PackageReference Include="Serilog" Version="3.0.1" />
+      <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+      <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+      <PackageReference Include="Serilog.Enrichers.Sensitive" Version="1.7.2" />
+      <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+      <PackageReference Include="Serilog.Expressions" Version="3.4.1" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="7.0.0" />
+      <PackageReference Include="Serilog.Extensions.Logging.ApplicationInsights" Version="1.1.0" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
+      <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+      <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+      <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="appSettings.Development.json">
+        <DependentUpon>appSettings.json</DependentUpon>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="%CA_LOG_BASE_FOLDER%\logs\debug-logs20230725.json" />
+    </ItemGroup>
+
+
+
+</Project>
