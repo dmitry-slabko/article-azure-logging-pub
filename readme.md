@@ -56,7 +56,7 @@ we will cover it next, though it works only for Azure hosted applications.
 ## Using Azure Log Stream
 
 Azure provides a way to see application logs almost immediately via a Log Stream. It allows to stream logs written into
-files stored on Azure filesystem or to Azure blob. This feature is not normally designed to be always on, and when you
+files stored on Azure filesystem or to Azure blob. This feature is not designed to be always on, and when you
 enable filesystem application logging it would turn off automatically in 12 hours.
 
 ![Azure Log Stream configuration](assets/images/ss05.png)
@@ -462,6 +462,8 @@ Set method takes three parameters - log property name, its value as an object, a
 This code sample uses an imaginary interface, IDiagnosticContextItem, that would work as a provider for such additional data
 when logging requests.
 
+### Request body logging
+
 We have set up Serilog to log HTTP requests in a convenient and easy-to-process way. However, Serilog would not log request body,
 and it may be critical for debugging purposes.
 
@@ -581,7 +583,7 @@ If we expand headers, we will see their values:
 ![request headers](assets/images/ss11.png)
 
 Please note the 'apikey' header - this is a secret value, that should not be logged. We would need to implement sanitizing logged data
-if we want to log headers, and they contain sensitive information.
+if we want to log headers and they contain sensitive information.
 
 So, by now we have improved our logs with HTTP request details in quite a complete way.
 
@@ -601,7 +603,7 @@ The log context enricher allows to use a 'logging context' where custom properti
 disposable objects that get appended to log events until they are disposed.
 
 Serilog comes packed with many various log enrichers, I will not review most of them here. We will look at the correlation id
-in a chapter about the distributed logging. Now, I would like to give an overview of the concept because it gives a nice way
+in a chapter about the distributed logging. Now, I would like to give an overview of the concept because it provides a nice way
 of decoupling business and application code from logging concerns.
 
 Let's take as an example logging some currently authenticated user information with each log event.
@@ -874,15 +876,7 @@ other ways as well, such as pre-filtering HTTP request headers in our sample imp
 Thank you for reading, and I hope it was useful!
 
 
-## Sample project repository
-
-I prepared a GitHub repository with a sample ASP.NET Core project to demonstrate the code setup and basic technics described in
-the article: https://github.com/dmitry-slabko/article-azure-logging-pub
-
-
 ## Links to used resources
-
-Code sample repository - https://github.com/dmitry-slabko/article-azure-logging-pub/
 
 General information on logging in .NET - https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging
 
