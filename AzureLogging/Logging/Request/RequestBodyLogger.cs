@@ -1,5 +1,4 @@
 ﻿using AzureLogging.Logging.Contracts;
-using AzureLogging.Names;
 
 namespace AzureLogging.Logging.Request; 
 
