@@ -365,7 +365,7 @@ We also wrap the file sink into an async sink to avoid potential delays on file 
 > Please note that many other Serilog sinks already implement asynchronicity, such as Application Insights sink,
 > or do not need it, such as Console sink.
 
-The are two parameters for the file sink particularly important in Azure Log Stream scenario: 'shared' and 'flushToDiskInterval'.
+There are two parameters for the file sink particularly important in Azure Log Stream scenario: 'shared' and 'flushToDiskInterval'.
 The shared parameter should be set to true, and the flushToDiskInterval parameter should be set to a relatively small value
 to allow streaming log events in nigh real-time fashion.
 
